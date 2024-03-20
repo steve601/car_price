@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            h1{
+                text-align: center;
+                color: white;
+            }
+            body{
+                background-color: slategray;
+            }
+            .content{
+                width:33%;
+                margin: 0 auto;
+            }
+            form{
+                background-color: Lavender;
+                width: 450px;
+                height: 500px;
+            }
+            .inp{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>CAR PRICE PREDICTOR</h1>
+        <div class="content">
+            <form action="/predict" method='POST'>
+                <div class="inp">
+                    <h2>Predict</h2>
+                    <label for='Year' style='font-size: 22px;'>Year</label><br>
+                    <input type="number" name = 'Year' value='Year' min=2003 max=2018><br>
+                    <label for="Present_Price" style='font-size: 22px;'>Current Price of the Car($)</label><br> 
+                    <input type="number" name = "Present_Price" value="Present_Price" min = 0 max = 93><br>
+                    <label for="Kms_Driven" style='font-size: 22px;'>No. of Kms driven</label><br>
+                    <input type="number" name="Kms_Driven" value="Kms_Driven"><br>
+                    <label for="Fuel_Type" style='font-size: 22px;'>Type Of Fuel</label><br>
+                    <label for="Petrol">Petrol</label>
+                    <input type="radio" name='Fuel_Type' value = 'Petrol'><br>
+                    <label for="Diesel">Diesel</label>
+                    <input type="radio" name='Fuel_Type' value='Diesel'><br>
+                    <label for="CNG">CNG</label>
+                    <input type="radio" name = 'Fuel_Type' value='CNG'><br> 
+                    <label for="Seller_Type" style='font-size: 22px;'>Type Of Seller</label><br>
+                    <label for="Dealer">Dealer</label>
+                    <input type="radio" name='Seller_Type' value='Dealer'><br>
+                    <label for="Individual">Individual</label>
+                    <input type="radio" name='Seller_Type' value='Individual'><br>
+                    <label for="Transmission" style='font-size: 22px;'>Transmission</label><br>
+                    <label for="Manual">Manual</label>
+                    <input type="radio" name='Transmission' value='Manual'><br>
+                    <label for="Automatic">Automatic</label>
+                    <input type="radio" name='Transmission' value='Automatic'><br>  
+                    <br>
+                    <button type = 'submit'>Predict</button><br>
+                    <h2>{{pred}}</h2>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
